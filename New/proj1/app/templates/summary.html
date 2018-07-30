@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+student dashboard
+{% endblock %}
+
+{% block content %}
+<div id= "page-wrapper">
+
+    <form action="/status/?book_id={{bid}}" method="POST">
+        <h1>{{nm}}</h1>
+        <h3>Author:{{auth}}</h3>
+        <h3>Summary:</h3>
+        <h3>
+        {{m}}   
+        {{bid}}
+        </h3>
+
+        <input type="submit" value="Book">
+    </form>
+</div>
+
+{% endblock %}

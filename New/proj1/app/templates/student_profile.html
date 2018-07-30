@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+student dashboard
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="panel-body">
+<div id="page-wrapper">
+{% for i in m %}
+Name:{{ i.name }}
+<br>
+Username:{{ i.username }}
+<br>
+Email:{{ i.email }}
+<br>
+Phone_Number:{{ i.phone_number }}
+<br>
+UserType:{{ i.typeuser }}
+{% endfor %}
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

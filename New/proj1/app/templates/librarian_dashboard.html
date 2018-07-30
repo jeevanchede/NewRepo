@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}
+student dashboard
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                ISSUE TABLE
+                        </div>
+                    <div class="panel-body"> 
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+
+                    <thead>
+                        <tr>
+                            
+                            <th>Book Name</th>
+                            <th>Student Name</th>
+                            <th>status</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+
+
+                   
+                    {% for i in m %}
+                    <tr>
+                    <td>{{ i.Book_name }}</td>
+                    <td>{{ i.student_name }}</td>
+                    <td>{{ i.status }}</td>
+                    <td>{{ i.issue_date }}</td>
+                    <td>{{ i.return_date }}</td>
+                    <td>
+                        <form action="/PickedUp/?status=picked up&username={{ i.student_name }}&bookname={{ i.Book_name }}" method=POST>
+                            <button>Issued</button>
+                        </form>
+                        
+                    </td>   
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                RETURN TABLE
+                        </div>
+                    <div class="panel-body"> 
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+
+                    <thead>
+                        <tr>
+                            
+                            <th>Book Name</th>
+                            <th>Student Name</th>
+                            <th>status</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+
+
+                   
+                    {% for i in n %}
+                    <tr>
+                    <td>{{ i.Book_name }}</td>
+                    <td>{{ i.student_name }}</td>
+                    <td>{{ i.status }}</td>
+                    <td>{{ i.issue_date }}</td>
+                    <td>{{ i.return_date }}</td>
+                     <td>
+                        <form action="/Returned/?username={{ i.student_name }}&bookname={{ i.Book_name }}" method=POST>
+                            <button>Returned</button>
+                        </form>
+                        
+                    </td>   
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
