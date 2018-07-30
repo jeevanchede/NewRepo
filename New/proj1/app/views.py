@@ -10,7 +10,7 @@ from datetime import date
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 # Create your views here.
-
+#abc
 # def register(request):
 # 	#check username if already exists
 # 	return render(request,"register.html",{})
